@@ -4,6 +4,8 @@ function i18nGetKey(val) {
   };
 
   return val
+    .replace(/[&^%$@!#{}=+\.\*\/\\\?\[\]\(\)]/gi,'')
+    .replace(/[\-]/g,'_')
     .replace(/[\s]{2,}/g,' ')
     .replace(/([a-z])([A-Z])/g,'$1 $2')
     .trim()
